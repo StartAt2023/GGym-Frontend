@@ -12,13 +12,21 @@
   padding: 1rem 2rem;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-brand a {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+  font-weight: 700;
+  color: #2d3748;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-brand a:hover {
+  color: #4299e1;
 }
 
 .nav-links {
@@ -28,14 +36,14 @@
 }
 
 .nav-links a {
-  color: #333;
+  color: #4a5568;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #666;
+  color: #4299e1;
 }
 
 /* Dropdown Menu */
@@ -47,12 +55,16 @@
 .dropbtn {
   background: none;
   border: none;
-  color: #333;
+  color: #4a5568;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   padding: 0;
-  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+.dropbtn:hover {
+  color: #4299e1;
 }
 
 .dropdown-content {
@@ -61,105 +73,181 @@
   background-color: #fff;
   min-width: 200px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  border-radius: 8px;
+  padding: 0.5rem 0;
   z-index: 1;
-}
-
-.dropdown-content a {
-  color: #333;
-  padding: 0.8rem 1rem;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #f8f9fa;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
-  color: #666;
+.dropdown-content a {
+  color: #4a5568;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f7fafc;
+  color: #4299e1;
 }
 
 /* Auth Links */
-.nav-auth {
+.auth-links {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.nav-auth a {
-  color: #333;
-  text-decoration: none;
+.user-menu {
+  position: relative;
+}
+
+.user-menu-button {
+  background: none;
+  border: none;
+  color: #4a5568;
+  font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
-.nav-auth a:first-child {
-  border: 1px solid #333;
+.user-menu-button:hover {
+  background-color: #f7fafc;
+  color: #4299e1;
 }
 
-.nav-auth a:first-child:hover {
-  background-color: #333;
+.user-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+.user-dropdown a,
+.user-dropdown button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: #4a5568;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-dropdown a:hover,
+.user-dropdown button:hover {
+  background-color: #f7fafc;
+  color: #4299e1;
+}
+
+.user-dropdown button {
+  color: #e53e3e;
+}
+
+.user-dropdown button:hover {
+  background-color: #fff5f5;
+  color: #c53030;
+}
+
+.welcome-text {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.login-btn,
+.register-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  color: #4299e1;
+  border: 2px solid #4299e1;
+}
+
+.login-btn:hover {
+  background: #4299e1;
   color: #fff;
 }
 
-.nav-auth a:last-child {
-  background-color: #333;
+.register-btn {
+  background: #4299e1;
   color: #fff;
 }
 
-.nav-auth a:last-child:hover {
-  background-color: #444;
+.register-btn:hover {
+  background: #3182ce;
+}
+
+.logout-btn {
+  padding: 0.5rem 1rem;
+  background: #e53e3e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #c53030;
 }
 
 /* Main Content */
 .main-content {
   flex: 1;
-  padding: 2rem;
+  background-color: #f7fafc;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
     padding: 1rem;
-  }
-
-  .nav-brand {
-    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .nav-links {
     flex-direction: column;
+    width: 100%;
     gap: 1rem;
-    width: 100%;
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropbtn {
-    width: 100%;
-    text-align: left;
-    padding: 0.5rem 0;
   }
 
   .dropdown-content {
     position: static;
-    width: 100%;
     box-shadow: none;
+    padding: 0;
   }
 
-  .nav-auth {
-    margin-top: 1rem;
+  .auth-links {
     width: 100%;
     justify-content: center;
+  }
+
+  .user-dropdown {
+    position: static;
+    margin-top: 0.5rem;
+    box-shadow: none;
   }
 } 
