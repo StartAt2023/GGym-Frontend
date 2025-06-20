@@ -1,7 +1,8 @@
 import type { FC } from 'react'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './styles.css'
+import { useCart } from '../../store/CartContext'
 
 interface Product {
   id: number
@@ -13,8 +14,21 @@ interface Product {
 }
 
 const Product: FC = () => {
+  const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [sortBy, setSortBy] = useState<string>('default')
+  const { addToCart } = useCart()
+
+  // 解析URL参数
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const category = params.get('category');
+    if (category && ['strength', 'cardio', 'yoga', 'accessories', 'wearables'].includes(category)) {
+      setSelectedCategory(category);
+    } else {
+      setSelectedCategory('all');
+    }
+  }, [location.search]);
 
   const categories = [
     { id: 'all', name: 'All Products', icon: '🏋️‍♂️' },
@@ -114,6 +128,16 @@ const Product: FC = () => {
     }
   })
 
+  const handleAddToCart = (product: Product) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1
+    })
+  }
+
   return (
     <div className="product-page">
       <div className="filters-section">
@@ -157,7 +181,7 @@ const Product: FC = () => {
               <p className="product-description">{product.description}</p>
               <p className="product-price">${product.price}</p>
               <div className="product-actions">
-                <button className="add-to-cart-btn">Add to Cart</button>
+                <button className="add-to-cart-btn" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                 <Link to={`/product/${product.id}`} className="view-details-btn">
                   View Details
                 </Link>

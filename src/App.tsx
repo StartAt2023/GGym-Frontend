@@ -7,11 +7,14 @@ import Product from './pages/Product'
 import Cart from './pages/Cart'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import ProductDetail from './pages/Product/ProductDetail'
+import AdminProducts from './pages/AdminProducts'
 import './App.css'
 
 interface User {
   username: string
   email: string
+  role?: string
 }
 
 const App: FC = () => {
@@ -87,6 +90,9 @@ const App: FC = () => {
             </div>
             <Link to="/products">Products</Link>
             <Link to="/cart">Cart</Link>
+            {user?.role === 'admin' && (
+              <Link to="/admin/products">Admin Products</Link>
+            )}
           </div>
           <div className="auth-links">
             {!loading && (
@@ -123,9 +129,13 @@ const App: FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Product />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            {user?.role === 'admin' && (
+              <Route path="/admin/products" element={<AdminProducts user={user} />} />
+            )}
           </Routes>
         </main>
       </div>

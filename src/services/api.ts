@@ -58,24 +58,20 @@ export const authAPI = {
   login: async (data: { username: string; password: string }) => {
     try {
       console.log('Logging in user:', { username: data.username })
-      
-      // Try to determine if the input is an email or username
+      // 只允许邮箱登录
       const isEmail = data.username.includes('@')
       const loginData = isEmail 
         ? { email: data.username, password: data.password }
         : { username: data.username, password: data.password }
-      
       console.log('Sending login data:', loginData)
       const response = await api.post('/auth/login', loginData)
       console.log('Login response:', response.data)
-      
       if (response.data.token) {
         localStorage.setItem('token', response.data.token)
         console.log('Token stored successfully')
       } else {
         console.warn('No token received in login response')
       }
-      
       return response.data
     } catch (error: any) {
       console.error('Login error details:', {

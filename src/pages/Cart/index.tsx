@@ -1,47 +1,12 @@
 import type { FC } from 'react'
-import { useState } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './styles.css'
 
-interface CartItem {
-  id: number
-  name: string
-  price: number
-  image: string
-  quantity: number
-}
+import { useCart } from '../../store/CartContext'
 
 const Cart: FC = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: 1,
-      name: 'Professional Dumbbell Set',
-      price: 299,
-      image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61',
-      quantity: 1
-    },
-    {
-      id: 2,
-      name: 'Multi-functional Treadmill',
-      price: 3999,
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b',
-      quantity: 1
-    }
-  ])
-
-  const updateQuantity = (id: number, newQuantity: number) => {
-    if (newQuantity < 1) return
-    setCartItems(items =>
-      items.map(item =>
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    )
-  }
-
-  const removeItem = (id: number) => {
-    setCartItems(items => items.filter(item => item.id !== id))
-  }
-
+  const { cartItems, updateQuantity, removeItem } = useCart()
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const shipping = subtotal > 0 ? 29.99 : 0
   const total = subtotal + shipping
