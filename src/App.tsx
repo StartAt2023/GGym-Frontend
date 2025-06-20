@@ -5,6 +5,8 @@ import { authAPI } from './services/api'
 import Home from './pages/Home'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
+import CheckoutSuccess from './pages/CheckoutSuccess'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import ProductDetail from './pages/Product/ProductDetail'
@@ -131,6 +133,8 @@ const App: FC = () => {
             <Route path="/products" element={<Product />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/checkout-success" element={<CheckoutSuccess />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             {user?.role === 'admin' && (

@@ -1,14 +1,21 @@
 import type { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './styles.css'
 
 import { useCart } from '../../store/CartContext'
 
 const Cart: FC = () => {
+  const navigate = useNavigate()
   const { cartItems, updateQuantity, removeItem } = useCart()
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const shipping = subtotal > 0 ? 29.99 : 0
   const total = subtotal + shipping
+
+  const handleCheckout = () => {
+    if (cartItems.length > 0) {
+      navigate('/checkout')
+    }
+  }
 
   return (
     <div className="cart-page">
@@ -76,7 +83,7 @@ const Cart: FC = () => {
               <span>Total</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            <button className="checkout-btn">
+            <button className="checkout-btn" onClick={handleCheckout}>
               Proceed to Checkout
             </button>
             <Link to="/products" className="continue-shopping-link">

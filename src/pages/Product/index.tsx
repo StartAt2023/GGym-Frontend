@@ -17,6 +17,7 @@ const Product: FC = () => {
   const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [sortBy, setSortBy] = useState<string>('default')
+  const [showAddToCartNotification, setShowAddToCartNotification] = useState(false)
   const { addToCart } = useCart()
 
   // 解析URL参数
@@ -29,6 +30,16 @@ const Product: FC = () => {
       setSelectedCategory('all');
     }
   }, [location.search]);
+
+  // 处理添加到购物车通知
+  useEffect(() => {
+    if (showAddToCartNotification) {
+      const timer = setTimeout(() => {
+        setShowAddToCartNotification(false)
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [showAddToCartNotification])
 
   const categories = [
     { id: 'all', name: 'All Products', icon: '🏋️‍♂️' },
@@ -136,10 +147,20 @@ const Product: FC = () => {
       image: product.image,
       quantity: 1
     })
+    setShowAddToCartNotification(true)
   }
 
   return (
     <div className="product-page">
+      {/* 添加到购物车通知 */}
+      {showAddToCartNotification && (
+        <div className="add-to-cart-notification">
+          <div className="notification-content">
+            <span>✅ Item added to cart!</span>
+          </div>
+        </div>
+      )}
+
       <div className="filters-section">
         <div className="category-filters">
           {categories.map(category => (
