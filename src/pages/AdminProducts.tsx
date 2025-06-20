@@ -34,7 +34,7 @@ const AdminProducts: FC<AdminProductsProps> = ({ user }) => {
     if (user?.role !== 'admin') return;
     api.get('/products')
       .then(res => setProducts(res.data))
-      .catch(err => setError('Failed to fetch products'))
+      .catch(() => setError('Failed to fetch products'))
       .finally(() => setLoading(false));
   }, [user]);
 

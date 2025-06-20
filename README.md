@@ -1,3 +1,102 @@
+# E-commerce Order Processing System
+
+A modern e-commerce order processing system built with React, TypeScript, and Vite.
+
+## Features
+
+- User authentication (login/register)
+- Product management (admin)
+- Shopping cart functionality
+- Responsive design
+
+## Development
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create environment file:
+   ```bash
+   cp env.example .env
+   ```
+
+4. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+## Deployment
+
+### Option 1: Vercel (Recommended)
+
+1. Install Vercel CLI:
+   ```bash
+   npm i -g vercel
+   ```
+
+2. Deploy to Vercel:
+   ```bash
+   vercel
+   ```
+
+3. Set environment variables in Vercel dashboard:
+   - `VITE_API_BASE_URL`: Your backend API URL
+
+### Option 2: Netlify
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+
+2. Deploy the `dist` folder to Netlify
+
+3. Set environment variables in Netlify dashboard
+
+### Option 3: GitHub Pages
+
+1. Add to package.json:
+   ```json
+   {
+     "homepage": "https://yourusername.github.io/your-repo-name",
+     "scripts": {
+       "predeploy": "npm run build",
+       "deploy": "gh-pages -d dist"
+     }
+   }
+   ```
+
+2. Install gh-pages:
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+3. Deploy:
+   ```bash
+   npm run deploy
+   ```
+
+## Environment Variables
+
+- `VITE_API_BASE_URL`: Backend API base URL (default: http://localhost:5000/api)
+
+## Build
+
+```bash
+npm run build
+```
+
+The build output will be in the `dist` directory.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

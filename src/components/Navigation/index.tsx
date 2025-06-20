@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 
 const Navigation: FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn] = useState(false)
   const [showCategories, setShowCategories] = useState(false)
 
   const categories = [
