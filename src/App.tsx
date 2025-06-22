@@ -76,7 +76,7 @@ const App: FC = () => {
       <div className="app">
         <nav className="navbar">
           <div className="nav-brand">
-            <Link to="/">Fitness Store</Link>
+            <Link to="/">GGymShopping</Link>
           </div>
           <div className="nav-links">
             <Link to="/">Home</Link>

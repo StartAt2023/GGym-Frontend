@@ -1,13 +1,19 @@
-# E-commerce Order Processing System
+# GGymShopping
 
-A modern e-commerce order processing system built with React, TypeScript, and Vite.
+A modern fitness equipment e-commerce platform built with React, TypeScript, and Vite.
 
 ## Features
 
 - User authentication (login/register)
 - Product management (admin)
 - Shopping cart functionality
+- Checkout process with delivery date selection
 - Responsive design
+- Real-time order processing
+
+## About GGymShopping
+
+GGymShopping is your one-stop destination for professional fitness equipment. We offer high-quality strength training equipment, cardio machines, yoga accessories, and fitness wearables to help you achieve your fitness goals.
 
 ## Development
 
@@ -96,6 +102,45 @@ npm run build
 ```
 
 The build output will be in the `dist` directory.
+
+## Tech Stack
+
+- **Frontend**: React 19, TypeScript, Vite
+- **Styling**: CSS3 with modern design patterns
+- **State Management**: React Context API
+- **Routing**: React Router DOM
+- **HTTP Client**: Axios
+- **Build Tool**: Vite
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+├── pages/              # Page components
+│   ├── Home/           # Homepage
+│   ├── Product/        # Product listing and details
+│   ├── Cart/           # Shopping cart
+│   ├── Checkout/       # Checkout process
+│   ├── CheckoutSuccess/# Order success page
+│   ├── Login/          # User authentication
+│   └── Register/       # User registration
+├── services/           # API services
+├── store/              # State management (CartContext)
+└── assets/             # Static assets
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 # React + TypeScript + Vite
 

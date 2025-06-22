@@ -58,7 +58,7 @@ const Home: FC = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="logo-container">
-          <h1>EzCart</h1>
+          <h1>GGymShopping</h1>
           <p>Your One-Stop Shop for Professional Fitness Equipment</p>
         </div>
       </section>
