@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authAPI } from "../../services/api";
+import { useAuth } from "../../store/AuthContext";
 import "./styles.css";
 
 const Register = () => {
@@ -13,6 +14,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -62,11 +64,31 @@ const Register = () => {
       
       // After successful registration, try to login automatically
       try {
-        await authAPI.login({
+        const response = await authAPI.login({
           username: formData.username,
           password: formData.password,
         });
         console.log("Auto-login successful after registration");
+        
+        // Try to get user info if not included in response
+        let userData = response.user;
+        if (!userData) {
+          try {
+            userData = await authAPI.getUserInfo();
+          } catch (userInfoError) {
+            console.error("Failed to get user info:", userInfoError);
+            // Create basic user data from registration
+            userData = {
+              username: formData.username,
+              email: formData.email,
+              role: 'user'
+            };
+          }
+        }
+        
+        // Update auth context with user data
+        login(userData);
+        
         navigate("/");
       } catch (loginError) {
         console.log("Auto-login failed, redirecting to login page");

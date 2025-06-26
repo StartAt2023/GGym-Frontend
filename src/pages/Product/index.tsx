@@ -1,8 +1,10 @@
-import type { FC } from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './styles.css'
 import { useCart } from '../../store/CartContext'
+import { useAuth } from '../../store/AuthContext'
+import LoginPrompt from '../../components/LoginPrompt'
+import productsData from '../../data/products.json'
 
 interface Product {
   id: number
@@ -13,115 +15,43 @@ interface Product {
   description: string
 }
 
-const Product: FC = () => {
+const Product: React.FC = () => {
   const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [sortBy, setSortBy] = useState<string>('default')
-  const [showAddToCartNotification, setShowAddToCartNotification] = useState(false)
+  const [showLoginPrompt, setShowLoginPrompt] = useState(false)
   const { addToCart } = useCart()
+  const { isLoggedIn } = useAuth()
+  const [addedToCart, setAddedToCart] = useState<number | null>(null)
+  const [addedToWishlist, setAddedToWishlist] = useState<number | null>(null)
 
-  // 解析URL参数
+  // Parse URL parameters
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const category = params.get('category');
-    if (category && ['strength', 'cardio', 'yoga', 'accessories', 'wearables'].includes(category)) {
+    if (category && ['weight-loss', 'strength', 'muscle-gain', 'cardio', 'flexibility', 'performance', 'functional', 'senior'].includes(category)) {
       setSelectedCategory(category);
     } else {
       setSelectedCategory('all');
     }
   }, [location.search]);
 
-  // 处理添加到购物车通知
-  useEffect(() => {
-    if (showAddToCartNotification) {
-      const timer = setTimeout(() => {
-        setShowAddToCartNotification(false)
-      }, 3000)
-      return () => clearTimeout(timer)
-    }
-  }, [showAddToCartNotification])
-
   const categories = [
-    { id: 'all', name: 'All Products', icon: '🏋️‍♂️' },
-    { id: 'strength', name: 'Strength Training', icon: '💪' },
-    { id: 'cardio', name: 'Cardio Equipment', icon: '🏃‍♂️' },
-    { id: 'yoga', name: 'Yoga & Recovery', icon: '🧘‍♀️' },
-    { id: 'accessories', name: 'Fitness Accessories', icon: '🎯' },
-    { id: 'wearables', name: 'Fitness Wearables', icon: '⌚' }
-  ]
-
-  // Mock product data
-  const products: Product[] = [
-    {
-      id: 1,
-      name: 'Professional Dumbbell Set',
-      price: 299,
-      image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61',
-      category: 'strength',
-      description: 'Professional dumbbell set with multiple weight options, perfect for various training needs'
-    },
-    {
-      id: 2,
-      name: 'Multi-functional Treadmill',
-      price: 3999,
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b',
-      category: 'cardio',
-      description: 'Smart treadmill with multiple training modes and heart rate monitoring'
-    },
-    {
-      id: 3,
-      name: 'Yoga Mat Set',
-      price: 199,
-      image: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2',
-      category: 'yoga',
-      description: 'Eco-friendly yoga mat with non-slip surface, includes yoga blocks and stretch bands'
-    },
-    {
-      id: 4,
-      name: 'Power Training Rack',
-      price: 1999,
-      image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e',
-      category: 'strength',
-      description: 'Multi-functional power rack supporting squats, bench press, and various exercises'
-    },
-    {
-      id: 5,
-      name: 'Exercise Bike',
-      price: 2999,
-      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438',
-      category: 'cardio',
-      description: 'Professional exercise bike with silent design, perfect for home use'
-    },
-    {
-      id: 6,
-      name: 'Yoga Ball Set',
-      price: 159,
-      image: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2',
-      category: 'yoga',
-      description: 'Professional yoga ball set with various sizes, suitable for different training needs'
-    },
-    {
-      id: 7,
-      name: 'Fitness Tracker',
-      price: 199,
-      image: 'https://images.unsplash.com/photo-1576243345690-4e4b79b63288',
-      category: 'wearables',
-      description: 'Advanced fitness tracker with heart rate monitoring and activity tracking'
-    },
-    {
-      id: 8,
-      name: 'Resistance Bands Set',
-      price: 49,
-      image: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2',
-      category: 'accessories',
-      description: 'Set of resistance bands for strength training and rehabilitation'
-    }
+    { id: 'all', name: 'All Products', image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop' },
+    { id: 'weight-loss', name: 'Weight Loss', image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=300&fit=crop' },
+    { id: 'strength', name: 'Strength Training', image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop' },
+    { id: 'muscle-gain', name: 'Muscle Gain', image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop' },
+    { id: 'cardio', name: 'Cardio Equipment', image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop' },
+    { id: 'flexibility', name: 'Flexibility & Recovery', image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop' },
+    { id: 'performance', name: 'Performance Training', image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop' },
+    { id: 'functional', name: 'Functional Training', image: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=400&h=300&fit=crop' },
+    { id: 'senior', name: 'Senior Fitness', image: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=400&h=300&fit=crop' }
   ]
 
   // Filter products
-  const filteredProducts = products.filter(product => 
-    selectedCategory === 'all' ? true : product.category === selectedCategory
-  )
+  const filteredProducts = selectedCategory === 'all' 
+    ? productsData.products 
+    : productsData.products.filter(product => product.category === selectedCategory)
 
   // Sort products
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -140,6 +70,11 @@ const Product: FC = () => {
   })
 
   const handleAddToCart = (product: Product) => {
+    if (!isLoggedIn) {
+      setShowLoginPrompt(true)
+      return
+    }
+
     addToCart({
       id: product.id,
       name: product.name,
@@ -147,62 +82,82 @@ const Product: FC = () => {
       image: product.image,
       quantity: 1
     })
-    setShowAddToCartNotification(true)
+    setAddedToCart(product.id)
+    
+    setTimeout(() => {
+      setAddedToCart(null)
+    }, 3000)
+  }
+
+  const handleAddToWishlist = (product: Product) => {
+    if (!isLoggedIn) {
+      setShowLoginPrompt(true)
+      return
+    }
+
+    // Add to wishlist logic here
+    setAddedToWishlist(product.id)
+    
+    setTimeout(() => {
+      setAddedToWishlist(null)
+    }, 3000)
   }
 
   return (
     <div className="product-page">
-      {/* 添加到购物车通知 */}
-      {showAddToCartNotification && (
-        <div className="add-to-cart-notification">
-          <div className="notification-content">
-            <span>✅ Item added to cart!</span>
-          </div>
-        </div>
-      )}
+      <div className="product-header">
+        <h1>Fitness Equipment</h1>
+        <p>Discover our comprehensive range of professional fitness equipment</p>
+      </div>
 
-      <div className="filters-section">
-        <div className="category-filters">
-          {categories.map(category => (
-            <button
+      <div className="category-filter">
+        <div className="category-grid">
+          {categories.map((category) => (
+            <div
               key={category.id}
-              className={`category-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              className={`category-card ${selectedCategory === category.id ? 'active' : ''}`}
               onClick={() => setSelectedCategory(category.id)}
             >
-              <span className="category-icon">{category.icon}</span>
-              <span className="category-name">{category.name}</span>
-            </button>
+              <img src={category.image} alt={category.name} />
+              <h3>{category.name}</h3>
+            </div>
           ))}
-        </div>
-        <div className="sort-filter">
-          <label>Sort by:</label>
-          <select 
-            value={sortBy} 
-            onChange={(e) => setSortBy(e.target.value)}
-            className="sort-select"
-          >
-            <option value="default">Default</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="name-asc">Name: A to Z</option>
-            <option value="name-desc">Name: Z to A</option>
-          </select>
         </div>
       </div>
 
       <div className="products-grid">
-        {sortedProducts.map(product => (
+        {sortedProducts.map((product) => (
           <div key={product.id} className="product-card">
-            <div 
-              className="product-image"
-              style={{ backgroundImage: `url(${product.image})` }}
-            />
+            <div className="product-image">
+              <img src={product.image} alt={product.name} />
+              {addedToCart === product.id && (
+                <div className="added-notification">
+                  Added to cart!
+                </div>
+              )}
+              {addedToWishlist === product.id && (
+                <div className="added-notification">
+                  Added to wishlist!
+                </div>
+              )}
+            </div>
             <div className="product-info">
               <h3>{product.name}</h3>
               <p className="product-description">{product.description}</p>
-              <p className="product-price">${product.price}</p>
+              <div className="product-price">${product.price}</div>
               <div className="product-actions">
-                <button className="add-to-cart-btn" onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                <button 
+                  className="add-to-cart-btn"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add to Cart
+                </button>
+                <button 
+                  className="add-to-wishlist-btn"
+                  onClick={() => handleAddToWishlist(product)}
+                >
+                  ♡
+                </button>
                 <Link to={`/product/${product.id}`} className="view-details-btn">
                   View Details
                 </Link>
@@ -211,6 +166,13 @@ const Product: FC = () => {
           </div>
         ))}
       </div>
+
+      {showLoginPrompt && (
+        <LoginPrompt 
+          isVisible={showLoginPrompt}
+          onClose={() => setShowLoginPrompt(false)}
+        />
+      )}
     </div>
   )
 }

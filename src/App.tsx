@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { authAPI } from './services/api'
+import { useAuth } from './store/AuthContext'
 import Home from './pages/Home'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
@@ -11,16 +12,13 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import ProductDetail from './pages/Product/ProductDetail'
 import AdminProducts from './pages/AdminProducts'
+import Wishlist from './pages/Wishlist'
+import AccountSettings from './pages/AccountSettings'
+import MyOrders from './pages/MyOrders'
 import './App.css'
 
-interface User {
-  username: string
-  email: string
-  role?: string
-}
-
 const App: FC = () => {
-  const [user, setUser] = useState<User | null>(null)
+  const { user, isLoggedIn, login, logout } = useAuth()
   const [loading, setLoading] = useState(true)
   const [showUserMenu, setShowUserMenu] = useState(false)
 
@@ -28,16 +26,15 @@ const App: FC = () => {
     const token = localStorage.getItem('token')
     if (token) {
       try {
-        const data: User = await authAPI.getUserInfo()
-        setUser(data)
+        const data = await authAPI.getUserInfo()
+        login(data)
         console.log('User info fetched:', data)
       } catch (error) {
         console.error('Failed to fetch user info:', error)
-        localStorage.removeItem('token')
-        setUser(null)
+        logout()
       }
     } else {
-      setUser(null)
+      logout()
     }
     setLoading(false)
   }
@@ -55,7 +52,7 @@ const App: FC = () => {
           fetchUserInfo()
         } else {
           // Token was removed, clear user
-          setUser(null)
+          logout()
           setLoading(false)
         }
       }
@@ -67,7 +64,7 @@ const App: FC = () => {
 
   const handleLogout = () => {
     authAPI.logout()
-    setUser(null)
+    logout()
     setShowUserMenu(false)
   }
 
@@ -83,11 +80,14 @@ const App: FC = () => {
             <div className="dropdown">
               <button className="dropbtn">Categories</button>
               <div className="dropdown-content">
+                <Link to="/products?category=weight-loss">Weight Loss Training</Link>
                 <Link to="/products?category=strength">Strength Training</Link>
-                <Link to="/products?category=cardio">Cardio Equipment</Link>
-                <Link to="/products?category=yoga">Yoga & Recovery</Link>
-                <Link to="/products?category=accessories">Fitness Accessories</Link>
-                <Link to="/products?category=wearables">Fitness Wearables</Link>
+                <Link to="/products?category=muscle-gain">Muscle Building</Link>
+                <Link to="/products?category=cardio">Cardio Fitness</Link>
+                <Link to="/products?category=flexibility">Flexibility Training</Link>
+                <Link to="/products?category=performance">Sports Performance</Link>
+                <Link to="/products?category=functional">Functional Training</Link>
+                <Link to="/products?category=senior">Senior Fitness</Link>
               </div>
             </div>
             <Link to="/products">Products</Link>
@@ -99,13 +99,13 @@ const App: FC = () => {
           <div className="auth-links">
             {!loading && (
               <>
-                {user ? (
+                {isLoggedIn ? (
                   <div className="user-menu">
                     <button 
                       className="user-menu-button"
                       onClick={() => setShowUserMenu(!showUserMenu)}
                     >
-                      {user.username}
+                      {user?.username}
                     </button>
                     {showUserMenu && (
                       <div className="user-dropdown">
@@ -137,6 +137,9 @@ const App: FC = () => {
             <Route path="/checkout-success" element={<CheckoutSuccess />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/account" element={<AccountSettings />} />
+            <Route path="/orders" element={<MyOrders />} />
             {user?.role === 'admin' && (
               <Route path="/admin/products" element={<AdminProducts user={user} />} />
             )}

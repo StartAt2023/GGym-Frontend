@@ -1,0 +1,939 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Professional Dumbbell Set",
+      "price": 299,
+      "image": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=600&fit=crop",
+      "category": "weight-loss",
+      "description": "Complete dumbbell set for effective weight loss training",
+      "detailedDescription": "Complete dumbbell set for effective weight loss training. This professional-grade set includes multiple weight options perfect for various training needs and fitness levels.",
+      "features": [
+        "Multiple weight options (5-50 lbs)",
+        "Rubber-coated heads for durability",
+        "Ergonomic chrome handles",
+        "Compact storage rack included",
+        "Suitable for all fitness levels"
+      ],
+      "specifications": {
+        "Material": "Steel with rubber coating",
+        "Weight Range": "5-50 lbs",
+        "Handle Length": "14 inches",
+        "Warranty": "2 years",
+        "Storage Rack": "Included"
+      },
+      "reviews": [
+        {
+          "id": 1,
+          "user": "John D.",
+          "rating": 5,
+          "comment": "Excellent quality dumbbells. Perfect for home workouts.",
+          "date": "2024-01-15"
+        },
+        {
+          "id": 2,
+          "user": "Sarah M.",
+          "rating": 4,
+          "comment": "Great value for money. The storage rack is very convenient.",
+          "date": "2024-01-10"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Resistance Bands Set",
+      "price": 49,
+      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=800&h=600&fit=crop",
+      "category": "weight-loss",
+      "description": "Versatile resistance bands for toning and weight loss",
+      "detailedDescription": "Versatile resistance bands for toning and weight loss. Perfect for home workouts and travel.",
+      "features": [
+        "Multiple resistance levels",
+        "Portable and lightweight",
+        "Includes exercise guide",
+        "Durable latex material",
+        "Suitable for all fitness levels"
+      ],
+      "specifications": {
+        "Material": "Natural latex",
+        "Resistance Levels": "5 levels",
+        "Length": "6 feet",
+        "Warranty": "1 year",
+        "Storage Bag": "Included"
+      },
+      "reviews": [
+        {
+          "id": 3,
+          "user": "Emma L.",
+          "rating": 5,
+          "comment": "Great for travel workouts. Very versatile.",
+          "date": "2024-01-12"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Premium Yoga Mat",
+      "price": 89,
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+      "category": "weight-loss",
+      "description": "Non-slip yoga mat for home workouts and stretching",
+      "detailedDescription": "Non-slip yoga mat for home workouts and stretching. Premium quality for comfort and durability.",
+      "features": [
+        "Non-slip surface",
+        "Extra thick padding",
+        "Eco-friendly material",
+        "Easy to clean",
+        "Includes carrying strap"
+      ],
+      "specifications": {
+        "Material": "TPE foam",
+        "Thickness": "6mm",
+        "Dimensions": "72\" x 24\"",
+        "Weight": "2.5 lbs",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 4,
+          "user": "Maria K.",
+          "rating": 4,
+          "comment": "Very comfortable and non-slip. Perfect for yoga.",
+          "date": "2024-01-08"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Foam Roller",
+      "price": 39,
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+      "category": "weight-loss",
+      "description": "High-density foam roller for muscle recovery",
+      "detailedDescription": "High-density foam roller for muscle recovery and self-massage.",
+      "features": [
+        "High-density foam",
+        "Textured surface",
+        "Lightweight design",
+        "Multiple uses",
+        "Durable construction"
+      ],
+      "specifications": {
+        "Material": "EVA foam",
+        "Length": "18 inches",
+        "Diameter": "6 inches",
+        "Weight": "1.2 lbs",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 5,
+          "user": "David R.",
+          "rating": 5,
+          "comment": "Great for post-workout recovery. Very effective.",
+          "date": "2024-01-20"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Treadmill Pro",
+      "price": 1299,
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+      "category": "weight-loss",
+      "description": "Professional treadmill for effective cardio workouts",
+      "detailedDescription": "Professional treadmill for effective cardio workouts at home.",
+      "features": [
+        "Motorized belt",
+        "Speed control",
+        "Incline adjustment",
+        "Heart rate monitoring",
+        "Foldable design"
+      ],
+      "specifications": {
+        "Motor": "2.5 HP",
+        "Speed Range": "0-12 mph",
+        "Incline": "0-15%",
+        "Belt Size": "20\" x 60\"",
+        "Max Weight": "300 lbs"
+      },
+      "reviews": [
+        {
+          "id": 6,
+          "user": "Lisa W.",
+          "rating": 4,
+          "comment": "Solid treadmill for home use. Good features.",
+          "date": "2024-01-18"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Olympic Barbell Set",
+      "price": 599,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "strength",
+      "description": "Professional Olympic barbell with weight plates",
+      "detailedDescription": "Professional Olympic barbell with weight plates. Built for serious strength training with premium materials and construction.",
+      "features": [
+        "Olympic standard 45lb barbell",
+        "Multiple weight plates included",
+        "Steel construction for durability",
+        "Knurled grip for secure handling",
+        "Weight collars included"
+      ],
+      "specifications": {
+        "Barbell Weight": "45 lbs",
+        "Bar Length": "7 feet",
+        "Weight Capacity": "1000 lbs",
+        "Material": "Steel",
+        "Grip": "Knurled"
+      },
+      "reviews": [
+        {
+          "id": 7,
+          "user": "Mike R.",
+          "rating": 5,
+          "comment": "Professional quality barbell. Perfect for home gym.",
+          "date": "2024-01-20"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Power Rack System",
+      "price": 899,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "strength",
+      "description": "Complete power rack for squats, bench press, and more",
+      "detailedDescription": "Complete power rack for squats, bench press, and more. Professional-grade strength training equipment.",
+      "features": [
+        "Safety bars included",
+        "Pull-up bar",
+        "Adjustable height",
+        "Steel construction",
+        "Multiple exercise options"
+      ],
+      "specifications": {
+        "Height": "84 inches",
+        "Width": "48 inches",
+        "Depth": "48 inches",
+        "Weight Capacity": "1000 lbs",
+        "Material": "Steel"
+      },
+      "reviews": [
+        {
+          "id": 8,
+          "user": "Tom B.",
+          "rating": 5,
+          "comment": "Excellent power rack. Very sturdy and safe.",
+          "date": "2024-01-15"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Adjustable Bench",
+      "price": 299,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "strength",
+      "description": "Multi-position bench for various strength exercises",
+      "detailedDescription": "Multi-position bench for various strength exercises.",
+      "features": [
+        "Multiple incline positions",
+        "Padded surface",
+        "Steel frame",
+        "Easy adjustment",
+        "Compact storage"
+      ],
+      "specifications": {
+        "Max Weight": "600 lbs",
+        "Incline Positions": "7 positions",
+        "Length": "48 inches",
+        "Width": "12 inches",
+        "Material": "Steel with vinyl"
+      },
+      "reviews": [
+        {
+          "id": 9,
+          "user": "Alex K.",
+          "rating": 4,
+          "comment": "Good quality bench. Easy to adjust.",
+          "date": "2024-01-12"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Pull-up Bar",
+      "price": 79,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "strength",
+      "description": "Wall-mounted pull-up bar for upper body strength",
+      "detailedDescription": "Wall-mounted pull-up bar for upper body strength training.",
+      "features": [
+        "Wall mounted",
+        "Multiple grip positions",
+        "Steel construction",
+        "Easy installation",
+        "Space saving"
+      ],
+      "specifications": {
+        "Length": "36 inches",
+        "Weight Capacity": "300 lbs",
+        "Grip Positions": "3 positions",
+        "Material": "Steel",
+        "Installation": "Wall mounted"
+      },
+      "reviews": [
+        {
+          "id": 10,
+          "user": "Chris M.",
+          "rating": 5,
+          "comment": "Great pull-up bar. Easy to install.",
+          "date": "2024-01-10"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Weight Plates Set",
+      "price": 399,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "strength",
+      "description": "Complete set of weight plates for barbell training",
+      "detailedDescription": "Complete set of weight plates for barbell training.",
+      "features": [
+        "Multiple weight options",
+        "Standard hole size",
+        "Rubber coated",
+        "Color coded",
+        "Durable construction"
+      ],
+      "specifications": {
+        "Total Weight": "255 lbs",
+        "Plate Sizes": "2.5, 5, 10, 25, 35, 45 lbs",
+        "Hole Size": "2 inches",
+        "Material": "Steel with rubber",
+        "Warranty": "2 years"
+      },
+      "reviews": [
+        {
+          "id": 11,
+          "user": "Ryan L.",
+          "rating": 4,
+          "comment": "Good quality plates. Nice rubber coating.",
+          "date": "2024-01-14"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Cable Machine",
+      "price": 1499,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "muscle-gain",
+      "description": "Professional cable machine for muscle isolation exercises",
+      "detailedDescription": "Professional cable machine for muscle isolation exercises.",
+      "features": [
+        "Dual cable system",
+        "Adjustable height",
+        "Multiple attachments",
+        "Smooth operation",
+        "Commercial quality"
+      ],
+      "specifications": {
+        "Weight Stack": "200 lbs",
+        "Height": "84 inches",
+        "Width": "60 inches",
+        "Depth": "48 inches",
+        "Material": "Steel"
+      },
+      "reviews": [
+        {
+          "id": 12,
+          "user": "Mark S.",
+          "rating": 5,
+          "comment": "Excellent cable machine. Very smooth operation.",
+          "date": "2024-01-16"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Smith Machine",
+      "price": 1999,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "muscle-gain",
+      "description": "Guided Smith machine for safe muscle building",
+      "detailedDescription": "Guided Smith machine for safe muscle building.",
+      "features": [
+        "Guided barbell",
+        "Safety catches",
+        "Multiple exercises",
+        "Commercial quality",
+        "Easy to use"
+      ],
+      "specifications": {
+        "Weight Stack": "300 lbs",
+        "Height": "84 inches",
+        "Width": "48 inches",
+        "Depth": "48 inches",
+        "Material": "Steel"
+      },
+      "reviews": [
+        {
+          "id": 13,
+          "user": "James W.",
+          "rating": 5,
+          "comment": "Great Smith machine. Very safe and stable.",
+          "date": "2024-01-19"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Leg Press Machine",
+      "price": 2499,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "muscle-gain",
+      "description": "Commercial leg press for lower body muscle development",
+      "detailedDescription": "Commercial leg press for lower body muscle development.",
+      "features": [
+        "45-degree angle",
+        "Weight stack",
+        "Adjustable seat",
+        "Safety features",
+        "Commercial quality"
+      ],
+      "specifications": {
+        "Weight Stack": "400 lbs",
+        "Height": "72 inches",
+        "Width": "48 inches",
+        "Depth": "60 inches",
+        "Material": "Steel"
+      },
+      "reviews": [
+        {
+          "id": 14,
+          "user": "Kevin D.",
+          "rating": 5,
+          "comment": "Excellent leg press. Very smooth and safe.",
+          "date": "2024-01-17"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Exercise Bike Pro",
+      "price": 899,
+      "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop",
+      "category": "cardio",
+      "description": "Professional exercise bike with heart rate monitoring",
+      "detailedDescription": "Professional exercise bike with heart rate monitoring. Features advanced technology for effective cardio workouts.",
+      "features": [
+        "Heart rate monitoring",
+        "Multiple resistance levels",
+        "Digital display",
+        "Comfortable seat",
+        "Transport wheels"
+      ],
+      "specifications": {
+        "Max Weight": "300 lbs",
+        "Resistance Levels": "16",
+        "Display": "LCD",
+        "Heart Rate Monitor": "Yes",
+        "Warranty": "3 years"
+      },
+      "reviews": [
+        {
+          "id": 15,
+          "user": "Lisa K.",
+          "rating": 4,
+          "comment": "Great cardio machine. The heart rate monitor works well.",
+          "date": "2024-01-18"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Rowing Machine",
+      "price": 799,
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+      "category": "cardio",
+      "description": "Full-body cardio workout with rowing machine",
+      "detailedDescription": "Full-body cardio workout with rowing machine.",
+      "features": [
+        "Full body workout",
+        "Adjustable resistance",
+        "Digital display",
+        "Foldable design",
+        "Smooth operation"
+      ],
+      "specifications": {
+        "Max Weight": "250 lbs",
+        "Resistance": "Magnetic",
+        "Display": "LCD",
+        "Length": "84 inches",
+        "Material": "Steel and aluminum"
+      },
+      "reviews": [
+        {
+          "id": 16,
+          "user": "Anna P.",
+          "rating": 4,
+          "comment": "Great full-body workout. Very smooth.",
+          "date": "2024-01-13"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Elliptical Trainer",
+      "price": 1299,
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+      "category": "cardio",
+      "description": "Low-impact elliptical for cardio fitness",
+      "detailedDescription": "Low-impact elliptical for cardio fitness.",
+      "features": [
+        "Low impact",
+        "Adjustable resistance",
+        "Heart rate monitoring",
+        "Digital display",
+        "Transport wheels"
+      ],
+      "specifications": {
+        "Max Weight": "300 lbs",
+        "Stride Length": "18 inches",
+        "Resistance Levels": "16",
+        "Display": "LCD",
+        "Warranty": "3 years"
+      },
+      "reviews": [
+        {
+          "id": 17,
+          "user": "Sarah J.",
+          "rating": 5,
+          "comment": "Excellent elliptical. Very smooth and quiet.",
+          "date": "2024-01-11"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Heart Rate Monitor",
+      "price": 199,
+      "image": "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=800&h=600&fit=crop",
+      "category": "cardio",
+      "description": "Advanced heart rate monitor for cardio tracking",
+      "detailedDescription": "Advanced heart rate monitor for cardio tracking.",
+      "features": [
+        "Chest strap",
+        "Digital display",
+        "Bluetooth connectivity",
+        "Water resistant",
+        "Long battery life"
+      ],
+      "specifications": {
+        "Battery Life": "1 year",
+        "Water Resistance": "IPX7",
+        "Connectivity": "Bluetooth",
+        "Display": "Digital",
+        "Warranty": "2 years"
+      },
+      "reviews": [
+        {
+          "id": 18,
+          "user": "Mike T.",
+          "rating": 4,
+          "comment": "Accurate heart rate monitoring. Good battery life.",
+          "date": "2024-01-09"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Stretching Straps",
+      "price": 29,
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+      "category": "flexibility",
+      "description": "Assisted stretching straps for flexibility improvement",
+      "detailedDescription": "Assisted stretching straps for flexibility improvement.",
+      "features": [
+        "Adjustable length",
+        "Durable material",
+        "Multiple uses",
+        "Portable",
+        "Easy to use"
+      ],
+      "specifications": {
+        "Length": "6 feet",
+        "Material": "Cotton",
+        "Weight": "0.5 lbs",
+        "Color": "Black",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 19,
+          "user": "Jenny L.",
+          "rating": 4,
+          "comment": "Great for stretching. Very durable.",
+          "date": "2024-01-07"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Meditation Cushion",
+      "price": 59,
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+      "category": "flexibility",
+      "description": "Comfortable meditation cushion for mindfulness practice",
+      "detailedDescription": "Comfortable meditation cushion for mindfulness practice.",
+      "features": [
+        "Memory foam",
+        "Removable cover",
+        "Multiple sizes",
+        "Eco-friendly",
+        "Easy to clean"
+      ],
+      "specifications": {
+        "Height": "4 inches",
+        "Diameter": "16 inches",
+        "Material": "Memory foam",
+        "Cover": "Removable",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 20,
+          "user": "Zoe M.",
+          "rating": 5,
+          "comment": "Very comfortable for meditation. Great quality.",
+          "date": "2024-01-06"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Agility Cones Set",
+      "price": 39,
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+      "category": "performance",
+      "description": "Professional agility cones for speed training",
+      "detailedDescription": "Professional agility cones for speed training.",
+      "features": [
+        "Set of 10 cones",
+        "Durable plastic",
+        "Bright colors",
+        "Stackable",
+        "Portable"
+      ],
+      "specifications": {
+        "Quantity": "10 cones",
+        "Height": "12 inches",
+        "Material": "Plastic",
+        "Colors": "Orange and white",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 21,
+          "user": "Coach Dan",
+          "rating": 5,
+          "comment": "Perfect for agility training. Very durable.",
+          "date": "2024-01-05"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Agility Ladder",
+      "price": 49,
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+      "category": "performance",
+      "description": "Speed and agility ladder for performance training",
+      "detailedDescription": "Speed and agility ladder for performance training.",
+      "features": [
+        "Adjustable rungs",
+        "Durable nylon",
+        "Easy setup",
+        "Portable",
+        "Multiple exercises"
+      ],
+      "specifications": {
+        "Length": "15 feet",
+        "Rungs": "12 adjustable",
+        "Material": "Nylon",
+        "Weight": "2 lbs",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 22,
+          "user": "Coach Steve",
+          "rating": 4,
+          "comment": "Great agility ladder. Easy to set up and use.",
+          "date": "2024-01-04"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Medicine Ball",
+      "price": 69,
+      "image": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=600&fit=crop",
+      "category": "performance",
+      "description": "Weighted medicine ball for explosive training",
+      "detailedDescription": "Weighted medicine ball for explosive training.",
+      "features": [
+        "Multiple weights",
+        "Rubber construction",
+        "Bounce capability",
+        "Grip friendly",
+        "Versatile use"
+      ],
+      "specifications": {
+        "Weight": "10 lbs",
+        "Diameter": "14 inches",
+        "Material": "Rubber",
+        "Bounce": "Yes",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 23,
+          "user": "Alex R.",
+          "rating": 4,
+          "comment": "Great medicine ball. Good bounce and grip.",
+          "date": "2024-01-03"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Plyometric Box",
+      "price": 129,
+      "image": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop",
+      "category": "performance",
+      "description": "Adjustable plyometric box for jump training",
+      "detailedDescription": "Adjustable plyometric box for jump training.",
+      "features": [
+        "Adjustable height",
+        "Durable wood",
+        "Non-slip surface",
+        "Easy assembly",
+        "Multiple heights"
+      ],
+      "specifications": {
+        "Height": "12, 18, 24 inches",
+        "Length": "24 inches",
+        "Width": "20 inches",
+        "Material": "Plywood",
+        "Weight": "15 lbs"
+      },
+      "reviews": [
+        {
+          "id": 24,
+          "user": "Jake M.",
+          "rating": 5,
+          "comment": "Excellent plyo box. Very sturdy and adjustable.",
+          "date": "2024-01-02"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Kettlebell Set",
+      "price": 199,
+      "image": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=600&fit=crop",
+      "category": "functional",
+      "description": "Complete kettlebell set for functional training",
+      "detailedDescription": "Complete kettlebell set for functional training.",
+      "features": [
+        "Multiple weights",
+        "Cast iron construction",
+        "Ergonomic handle",
+        "Durable finish",
+        "Versatile exercises"
+      ],
+      "specifications": {
+        "Weights": "10, 15, 20, 25 lbs",
+        "Material": "Cast iron",
+        "Handle": "Ergonomic",
+        "Finish": "Powder coated",
+        "Warranty": "2 years"
+      },
+      "reviews": [
+        {
+          "id": 25,
+          "user": "Nick S.",
+          "rating": 4,
+          "comment": "Great kettlebell set. Good quality and weights.",
+          "date": "2024-01-01"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Stability Ball",
+      "price": 49,
+      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=800&h=600&fit=crop",
+      "category": "functional",
+      "description": "Exercise stability ball for core training",
+      "detailedDescription": "Exercise stability ball for core training.",
+      "features": [
+        "Anti-burst design",
+        "Multiple sizes",
+        "Durable material",
+        "Easy to inflate",
+        "Versatile use"
+      ],
+      "specifications": {
+        "Diameter": "65 cm",
+        "Material": "PVC",
+        "Weight Capacity": "600 lbs",
+        "Color": "Black",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 26,
+          "user": "Rachel K.",
+          "rating": 4,
+          "comment": "Great stability ball. Very durable and stable.",
+          "date": "2023-12-30"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "TRX Suspension Trainer",
+      "price": 199,
+      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=800&h=600&fit=crop",
+      "category": "functional",
+      "description": "TRX suspension system for bodyweight training",
+      "detailedDescription": "TRX suspension system for bodyweight training.",
+      "features": [
+        "Suspension training",
+        "Adjustable straps",
+        "Multiple exercises",
+        "Portable",
+        "Commercial quality"
+      ],
+      "specifications": {
+        "Length": "8 feet",
+        "Weight Capacity": "350 lbs",
+        "Material": "Nylon webbing",
+        "Anchors": "Included",
+        "Warranty": "2 years"
+      },
+      "reviews": [
+        {
+          "id": 27,
+          "user": "Tyler B.",
+          "rating": 5,
+          "comment": "Excellent TRX system. Very versatile and portable.",
+          "date": "2023-12-29"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Lightweight Dumbbells",
+      "price": 79,
+      "image": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=600&fit=crop",
+      "category": "senior",
+      "description": "Lightweight dumbbells perfect for senior fitness",
+      "detailedDescription": "Lightweight dumbbells perfect for senior fitness.",
+      "features": [
+        "Lightweight design",
+        "Soft grip handles",
+        "Multiple weights",
+        "Easy to handle",
+        "Safe for seniors"
+      ],
+      "specifications": {
+        "Weights": "2, 3, 5 lbs",
+        "Material": "Neoprene",
+        "Handle": "Soft grip",
+        "Color": "Various",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 28,
+          "user": "Betty W.",
+          "rating": 5,
+          "comment": "Perfect for senior fitness. Easy to handle.",
+          "date": "2023-12-28"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Support Chair",
+      "price": 159,
+      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=800&h=600&fit=crop",
+      "category": "senior",
+      "description": "Stable support chair for seated exercises",
+      "detailedDescription": "Stable support chair for seated exercises.",
+      "features": [
+        "Stable design",
+        "Padded seat",
+        "Armrests",
+        "Non-slip feet",
+        "Easy to move"
+      ],
+      "specifications": {
+        "Height": "18 inches",
+        "Weight Capacity": "300 lbs",
+        "Material": "Steel with vinyl",
+        "Feet": "Non-slip",
+        "Warranty": "2 years"
+      },
+      "reviews": [
+        {
+          "id": 29,
+          "user": "Robert M.",
+          "rating": 4,
+          "comment": "Great support chair. Very stable and comfortable.",
+          "date": "2023-12-27"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Walking Aid",
+      "price": 89,
+      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=800&h=600&fit=crop",
+      "category": "senior",
+      "description": "Adjustable walking aid for mobility support",
+      "detailedDescription": "Adjustable walking aid for mobility support.",
+      "features": [
+        "Adjustable height",
+        "Lightweight aluminum",
+        "Folding design",
+        "Comfortable grips",
+        "Easy to use"
+      ],
+      "specifications": {
+        "Height Range": "32-38 inches",
+        "Material": "Aluminum",
+        "Weight": "8 lbs",
+        "Folding": "Yes",
+        "Warranty": "1 year"
+      },
+      "reviews": [
+        {
+          "id": 30,
+          "user": "Helen T.",
+          "rating": 4,
+          "comment": "Great walking aid. Very lightweight and adjustable.",
+          "date": "2023-12-26"
+        }
+      ]
+    }
+  ]
+} 

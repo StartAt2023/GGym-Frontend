@@ -1,0 +1,124 @@
+.login-prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.login-prompt-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+.login-prompt-content {
+  text-align: center;
+}
+
+.login-prompt-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.login-prompt-content h3 {
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.login-prompt-content p {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.login-prompt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.login-prompt-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.login-prompt-btn.primary {
+  background-color: #4299e1;
+  color: white;
+}
+
+.login-prompt-btn.primary:hover {
+  background-color: #3182ce;
+}
+
+.login-prompt-btn.secondary {
+  background-color: #48bb78;
+  color: white;
+}
+
+.login-prompt-btn.secondary:hover {
+  background-color: #38a169;
+}
+
+.login-prompt-btn.cancel {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.login-prompt-btn.cancel:hover {
+  background-color: #cbd5e0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-prompt-modal {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .login-prompt-icon {
+    font-size: 2.5rem;
+  }
+  
+  .login-prompt-content h3 {
+    font-size: 1.25rem;
+  }
+} 

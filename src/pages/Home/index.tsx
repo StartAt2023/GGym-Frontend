@@ -8,17 +8,17 @@ const Home: FC = () => {
 
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61',
+      image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1200&h=600&fit=crop',
       title: 'Professional Fitness Equipment',
       description: 'High-quality equipment for your fitness journey'
     },
     {
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=600&fit=crop',
       title: 'Cardio Solutions',
       description: 'Advanced cardio equipment for effective workouts'
     },
     {
-      image: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2',
+      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=600&fit=crop',
       title: 'Yoga & Recovery',
       description: 'Essential equipment for flexibility and recovery'
     }
@@ -36,20 +36,20 @@ const Home: FC = () => {
     {
       title: 'Strength Training',
       description: 'Professional equipment for building strength and muscle',
-      image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61',
+      image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=400&fit=crop',
       link: '/products?category=strength'
     },
     {
       title: 'Cardio Equipment',
       description: 'Advanced cardio machines for effective workouts',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b',
+      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop',
       link: '/products?category=cardio'
     },
     {
       title: 'Yoga & Recovery',
       description: 'Essential equipment for flexibility and recovery',
-      image: 'https://images.unsplash.com/photo-1592432678016-e910b452f9a2',
-      link: '/products?category=yoga'
+      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop',
+      link: '/products?category=flexibility'
     }
   ]
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { authAPI } from "../../services/api";
+import { useAuth } from "../../store/AuthContext";
 import "./styles.css";
 
 const Login = () => {
@@ -10,6 +11,7 @@ const Login = () => {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,9 +29,29 @@ const Login = () => {
     try {
       console.log("Attempting login for user:", formData.username);
       
-      await authAPI.login(formData);
+      const response = await authAPI.login(formData);
       
       console.log("Login successful");
+      
+      // Try to get user info if not included in response
+      let userData = response.user;
+      if (!userData) {
+        try {
+          userData = await authAPI.getUserInfo();
+        } catch (userInfoError) {
+          console.error("Failed to get user info:", userInfoError);
+          // Create basic user data from login response
+          userData = {
+            username: formData.username,
+            email: formData.username.includes('@') ? formData.username : '',
+            role: 'user'
+          };
+        }
+      }
+      
+      // Update auth context with user data
+      login(userData);
+      
       // Refresh the page to update the navigation bar with user info
       window.location.href = "/";
     } catch (err: any) {
